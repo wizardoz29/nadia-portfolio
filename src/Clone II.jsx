@@ -1,16 +1,16 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   ArrowRight, 
   Linkedin, 
+  FileText, 
   Menu, 
   X, 
   ExternalLink, 
   Instagram, 
   Globe, 
+  Mail, 
   Award, 
-  ChevronRight,
-  Twitter,
-  Palette
+  ChevronRight 
 } from 'lucide-react';
 
 export default function App() {
@@ -21,8 +21,7 @@ export default function App() {
     email: "Khadijat.raji00@gmail.com",
     linkedin: "https://www.linkedin.com/in/raji-khadijat-23ab80322",
     instagram: "https://instagram.com/Nadine9.7",
-    twitter: "https://x.com/spoil_missk?s=21",
-    vizzy: "https://vizzy.com/@khadijat00"
+    resume: "https://drive.google.com/file/d/14WqZN4zB8lvt_3yeBWdv_7NAGIbKUtjU/view?usp=drivesdk", 
   };
 
   const projects = [
@@ -115,18 +114,21 @@ export default function App() {
             <section className="pt-48 pb-32 px-6 max-w-7xl mx-auto">
               <div className="max-w-4xl">
                 <div className="inline-flex items-center gap-3 mb-8 px-4 py-1.5 bg-stone-50 border border-stone-100 text-stone-500 rounded-full text-[10px] font-bold uppercase tracking-[0.2em]">
-                  <Globe size={14} className="text-stone-300" /> Product Manager
+                  <Globe size={14} className="text-stone-300" /> Junior Product Manager
                 </div>
                 <h1 className="text-6xl md:text-[5.5rem] font-bold leading-[0.9] mb-10 tracking-tighter">
                   Engineering <span className="italic font-serif font-light text-stone-400">clarity</span> from complex digital <span className="text-stone-200">friction.</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-stone-500 mb-12 leading-relaxed max-w-2xl font-light">
-                  Product Manager focused on consumer behavior, AI personalization, and the small details that build user trust.
+                  Junior Product Manager focused on consumer behavior, AI personalization, and the small details that build user trust.
                 </p>
                 <div className="flex flex-wrap gap-5">
                   <button onClick={() => navigateTo('projects')} className="bg-stone-900 text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:bg-stone-800 transition-all shadow-xl shadow-stone-200">
                     Explore Projects <ArrowRight size={20} />
                   </button>
+                  <a href={myLinks.resume} target="_blank" rel="noreferrer" className="px-10 py-5 border border-stone-200 rounded-full font-bold flex items-center gap-2 hover:bg-stone-50 transition-all">
+                    View Resume
+                  </a>
                 </div>
               </div>
             </section>
@@ -142,13 +144,13 @@ export default function App() {
                       <Award size={16} /> 4.75 CGPA Scholar
                     </div>
                     <div className="flex items-center gap-3 text-stone-400 font-bold text-[10px] uppercase tracking-widest">
-                      <Globe size={16} /> Product Strategy
+                      <FileText size={16} /> B.Sc. Business Admin
                     </div>
                   </div>
                 </div>
                 <div className="lg:col-span-8">
                   <p className="text-3xl md:text-4xl font-light leading-snug text-stone-900 mb-10">
-                    I am a product manager with a strong interest in <span className="text-stone-400 font-serif italic">consumer behavior</span>, personalization, and the small details that make digital experiences feel trustworthy and effortless.
+                    I am a junior product manager with a strong interest in <span className="text-stone-400 font-serif italic">consumer behavior</span>, personalization, and the small details that make digital experiences feel trustworthy and effortless.
                   </p>
                   <div className="grid md:grid-cols-2 gap-12 text-stone-500 leading-relaxed text-lg font-light">
                     <p>
@@ -189,6 +191,11 @@ export default function App() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <section className="py-20 px-6 max-w-7xl mx-auto text-center border-t border-stone-100">
+              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-stone-300 mb-4">On the Horizon</h2>
+              <p className="text-xl text-stone-500 font-serif italic">currently building for the future...</p>
             </section>
 
             {/* Academic Section */}
@@ -306,7 +313,7 @@ export default function App() {
                                rel="noopener noreferrer" 
                                className="inline-flex border border-stone-200 bg-white text-stone-900 px-12 py-6 rounded-full font-bold items-center gap-3 hover:bg-stone-50 transition-all"
                              >
-                               View Case PDF <FileText size={20} />
+                               {project.id === 'saas' ? 'View Case PDF' : 'Download PRD PDF'} <FileText size={20} />
                              </a>
                           )}
                         </div>
@@ -357,7 +364,7 @@ export default function App() {
               <div className="flex flex-col">
                 <h1 className="text-7xl md:text-[9rem] font-bold mb-16 tracking-tighter leading-none">Hello.</h1>
                 <p className="text-2xl text-stone-500 font-light leading-snug mb-20 max-w-md italic">
-                  I'm actively seeking remote Product PM opportunities globally.
+                  I'm actively seeking remote Junior/Associate Product Manager opportunities globally.
                 </p>
                 
                 <div className="space-y-10 mt-auto">
@@ -379,20 +386,6 @@ export default function App() {
                         </div>
                         <ArrowRight size={20} className="text-stone-200"/>
                       </a>
-                      <a href={myLinks.vizzy} target="_blank" rel="noopener noreferrer" className="p-8 bg-white border border-stone-100 rounded-3xl flex items-center justify-between group hover:shadow-lg transition-all">
-                        <div className="flex items-center gap-4">
-                          <Palette size={28} className="text-stone-300 group-hover:text-purple-600 transition-colors"/>
-                          <span className="font-bold text-lg">Vizzy Portfolio</span>
-                        </div>
-                        <ArrowRight size={20} className="text-stone-200"/>
-                      </a>
-                      <a href={myLinks.twitter} target="_blank" rel="noopener noreferrer" className="p-8 bg-white border border-stone-100 rounded-3xl flex items-center justify-between group hover:shadow-lg transition-all">
-                        <div className="flex items-center gap-4">
-                          <Twitter size={28} className="text-stone-300 group-hover:text-stone-900 transition-colors"/>
-                          <span className="font-bold text-lg">X (Twitter)</span>
-                        </div>
-                        <ArrowRight size={20} className="text-stone-200"/>
-                      </a>
                       <a href={myLinks.instagram} target="_blank" rel="noopener noreferrer" className="p-8 bg-white border border-stone-100 rounded-3xl flex items-center justify-between group hover:shadow-lg transition-all">
                         <div className="flex items-center gap-4">
                           <Instagram size={28} className="text-stone-300 group-hover:text-rose-500 transition-colors"/>
@@ -400,9 +393,16 @@ export default function App() {
                         </div>
                         <ArrowRight size={20} className="text-stone-200"/>
                       </a>
+                      <a href={myLinks.resume} target="_blank" rel="noopener noreferrer" className="p-8 bg-white border border-stone-100 rounded-3xl flex items-center justify-between group hover:shadow-lg transition-all">
+                        <div className="flex items-center gap-4">
+                          <FileText size={28} className="text-stone-300 group-hover:text-stone-900 transition-colors"/>
+                          <span className="font-bold text-lg">Resume</span>
+                        </div>
+                        <ArrowRight size={20} className="text-stone-200"/>
+                      </a>
                    </div>
                 </div>
-                <p className="mt-12 text-sm text-stone-400 font-medium">Open to Remote & Global Relocation</p>
+                <p className="mt-12 text-sm text-stone-400 font-medium">Currently based in Lagos • Open to Remote & Global Relocation</p>
               </div>
             </div>
           </div>
@@ -412,8 +412,8 @@ export default function App() {
       <footer className="py-32 px-6 border-t border-stone-100 bg-stone-50/50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="text-center md:text-left">
-            <p className="text-[10px] font-black uppercase tracking-[0.6em] text-stone-300 mb-4 italic">KHADIJAT RAJI Portfolio 2025</p>
-            <p className="text-xs text-stone-400 font-medium">Built with Product-First Thinking.</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.6em] text-stone-300 mb-4 italic">KHADIJAT RAJI Portfolio, 2025</p>
+            <p className="text-xs text-stone-400 font-medium">Built with React, Tailwind, and Product-First Thinking.</p>
           </div>
           <div className="flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">
              <button onClick={() => navigateTo('home')} className="hover:text-stone-900">Home</button>
